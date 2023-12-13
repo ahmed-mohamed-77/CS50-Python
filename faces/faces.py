@@ -1,8 +1,9 @@
 input_var = input("enter a sentence: ")
 input_var = input_var.capitalize()
-if input_var == "Hello :)":
-    print(f"{input_var} 😊")
-elif input_var == "Goodbye :(":
-    print(f"{input_var} 😒")
-if input_var == "Hello :) Goodbye :(":
-    print(f"{input_var} 😊")
+
+if "Hello :)" in input_var:
+    print("Hello 🙂")
+elif "Goodbye :(" in input_var:
+    print("Goodbye 🙁")
+elif "Hello :)" in input_var and "Goodbye :(" in input_var:
+    print("Hello 🙂 Goodbye 🙁")
