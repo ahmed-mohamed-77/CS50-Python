@@ -1,3 +1,3 @@
-input_var = input("enter a sentence: ").lower().strip()
+input_var = input("enter a sentence: ").replace(' ', '...').lower().strip()
 
-print(input_var, sep="...")
+print(input_var)
