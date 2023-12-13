@@ -4,5 +4,5 @@ if input_var == "Hello :)":
     print(f"{input_var} 😊")
 elif input_var == "Goodbye :(":
     print(f"{input_var} 😒")
-if input_var == "Hello :)":
+if input_var == "Hello :) Goodbye :(":
     print(f"{input_var} 😊")
