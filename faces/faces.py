@@ -1,5 +1,20 @@
-input_var = input("enter a sentence: ")
-input_var = input_var.capitalize()
+def main():
+    # get user input
+    user_input = input("enter a sentence: ").capitalize()
+
+    # call the convert function
+    convert(user_input)
+
+    # print the result
+    
+
+
+def convert(msg):
+
+
+
+
+
 
 if "Hello :)" in input_var:
     print("Hello 🙂")
