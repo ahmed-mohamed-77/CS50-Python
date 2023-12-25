@@ -14,3 +14,9 @@ def percent_to_float():
     return percentage / 100
 
 main()
+
+
+
+def dollars_to_float():
+    doller = float(input("How much was the meal? "))
+    return doller
