@@ -5,11 +5,11 @@ def main():
     print(f"Leave ${tip:.2f}")
 
 
-def dollars_to_float(doller):
+def dollars_to_float():
     doller = float(input("How much was the meal? "))
     return doller
 
-def percent_to_float(percentage):
+def percent_to_float():
     percentage = float(input("What percentage would you like to tip? "))
     return percentage
 
