@@ -1,3 +1,3 @@
-input_var = input("enter a sentence: ", sep="...")
+input_var = input("", sep="...")
 
 print(input_var)
