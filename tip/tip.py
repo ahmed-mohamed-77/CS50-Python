@@ -10,7 +10,7 @@ def dollars_to_float():
     return doller
 
 def percent_to_float():
-    percentage = float(input("What percentage would you like to tip? "))
+    percentage = float(input("What percentage would you like to tip? ")) / 100
     return percentage
 
 main()
