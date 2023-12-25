@@ -1,24 +1,18 @@
 def main():
     # get user input
-    user_input = input("enter a sentence: ").capitalize()
-
+    msg = input("enter a sentence: ").capitalize()
     # call the convert function
-    convert(user_input)
-
+    result = convert(msg)
     # print the result
-    
-
+    print(result)
 
 def convert(msg):
+    # convert :) to happy emoji
+    msg1 = msg.replace(":)", "🙂")
+    msg2 = msg1.replace(":(", "🙁")
+    return msg2
 
 
+main()
 
 
-
-
-if "Hello :)" in input_var:
-    print("Hello 🙂")
-elif "Goodbye :(" in input_var:
-    print("Goodbye 🙁")
-elif "Hello :)" in input_var and " Goodbye :(" in input_var:
-    print("Hello 🙂 Goodbye 🙁")
