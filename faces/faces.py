@@ -1,6 +1,6 @@
 def main():
     # get user input
-    msg = input("enter a sentence: ").capitalize()
+    msg = input()
     # call the convert function
     result = convert(msg)
     # print the result
