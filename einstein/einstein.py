@@ -1,4 +1,4 @@
 m = float(input("m: "))
-c = 3.00 * (pow(10, 8))
+c = 300000000
 result = m * (c ** 2)
-print(f"E: {resilt:20f}")
+print(f"E: {result}")
