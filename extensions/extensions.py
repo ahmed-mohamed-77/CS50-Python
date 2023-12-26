@@ -1,4 +1,7 @@
 def main()
+    file_name = input("File name: ")
+    fname,extension = [map.()]
+    if file_name
 .gif image/gif
 .jpg image/jpeg
 .jpeg image/jpeg
