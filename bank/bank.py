@@ -1,6 +1,6 @@
 # greeting from the teller
-greeting = input("Greeting: ").capitalize()
-greeting = greeting.strip()
+greeting = input("Greeting: ").strip().lower().capitalize()
+
 # hello pays $0
 if "Hello" in greeting:
     print("$0")
