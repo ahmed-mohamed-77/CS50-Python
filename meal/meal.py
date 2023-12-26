@@ -1,20 +1,17 @@
-
-
 def main():
-    meal_time = input("Enter times in HH:MM\n").split()
-    convert(meal_time)
+    time_str = input("Enter the time in 24-hour format (HH:MM): ")
+    hour = convert(time_str)
 
-
-def convert(time):
-
-    hour, min = [int(i) for i in time.split(":")]
-
-    if (7 >= hour <= 8) and (0 >= min <= 60):
-        print("breakfast time")
-    elif 12.0 <= time_in_hours <= 13.0:
+    if 7.0 <= hour <= 8.0:
+        print("It's breakfast time!")
+    elif 12.0 <= hour <= 13.0:
         print("It's lunch time!")
-    elif 18.0 <= time_in_hours <= 19.0:
+    elif 18.0 <= hour <= 19.0:
         print("It's dinner time!")
+
+def convert(time_str):
+    hours, minutes = map(int, time_str.split(":"))
+    return hours + minutes / 60.0
 
 if __name__ == "__main__":
     main()
