@@ -1,21 +1,20 @@
 def main():
     file_name = input("File name: ")
-    fname, extension = file_name.split(".")
-    extension = extension.lower()
+    extension = file_name.lower()
 
-    if extension == "gif":
+    if ".gif" in extension:
         print("image/gif")
-    elif extension == "jpg":
+    elif ".jpg" in extension:
         print("image/jpeg")
-    elif extension == "jpeg":
+    elif ".jpeg" in extension:
         print("image/jpeg")
-    elif extension == "png":
+    elif ".png" in extension:
         print("image/png")
-    elif extension == "pdf":
+    elif ".pdf" in extension:
         print("application/pdf")
-    elif extension == "txt":
+    elif ".txt" in extension:
         print("text/plain")
-    elif extension == "zip":
+    elif ".zip" in extension:
         print("application/zip")
     else:
         print("application/octet-stream")
