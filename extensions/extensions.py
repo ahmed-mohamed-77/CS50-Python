@@ -16,6 +16,8 @@ def main():
         print("text/plain")
     elif extension == "zip":
         print("application/zip")
+    else:
+        print("application/octet-stream")
 
 if __name__ == "__main__":
     main()
