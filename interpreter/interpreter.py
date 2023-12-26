@@ -1,10 +1,13 @@
 def main():
-    x,y,z = input("Enter a calculations: "). split(" ")
-    print (x, y, z)
-    print(type(x))
-    print(type(y))
-    print(type(z))
-
+    x,y,z = input("expression: "). split(" ")
+    if y == "+":
+        print(float(x) + float(z))
+    if y == "-":
+        print(float(x) - float(z))
+    if y == "*":
+        print(float(x) * float(z))
+    if y == "/":
+        print(float(x) / float(z))
 
 if __name__ == "__main__":
     main()
