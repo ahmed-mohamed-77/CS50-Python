@@ -6,7 +6,7 @@ def main():
 
 
 def convert(time):
-    for time in alltimes:
+    for time in meal_time:
      hour, min = [int(i) for i in time.split(":")]
 
      if (7 >= hour <= 8) and (0 >= min <= 60):
