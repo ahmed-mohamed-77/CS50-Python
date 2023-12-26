@@ -1,6 +1,7 @@
 def main():
     file_name = input("File name: ")
     fname, extension = file_name.split(".")
+    extension = extension.lower()
 
     if extension == "gif":
         print("image/gif")
