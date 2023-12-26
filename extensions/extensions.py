@@ -1,6 +1,6 @@
 def main()
     file_name = input("File name: ")
-    fname,extension = [map.()]
+    fname,extension = [int(i) for i in file_name.split(".")]
     if file_name
 .gif image/gif
 .jpg image/jpeg
