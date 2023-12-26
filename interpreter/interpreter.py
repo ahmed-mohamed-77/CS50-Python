@@ -1,4 +1,6 @@
 def main():
+    x,y,z = input("Enter a calculations" ). split(" ")
+    print (x, y, z)
     
 
 
