@@ -4,10 +4,8 @@ greeting = input("Greeting: ").capitalize()
 if "Hello" in greeting:
     print("$0")
 # any greeting starting with H pays $20
-elif ["How you doing", "Hey", "How's it going"] in greeting:
+elif any(phrases in greeting for phrases in ["How you doing", "Hey", "How's it going"]):
     print("$20")
-# elif "Hey"
-# elif "How's it going"
-# any other greetings
+# any other greetings pays $100
 else:
     print("$100")
