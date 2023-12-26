@@ -1,10 +1,11 @@
-In deep.py, implement a program that prompts the user for
-the answer to the Great Question of Life, the Universe and Everything,
-outputting Yes if the user inputs 42 or (case-insensitively) forty-two or forty two.
-Otherwise output No.
-
-
 def main():
-    
+    user_input = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
+    user_input = user_input.strip().lower()
+
+    if (user_input == "42") or (user_input == "forty-two") or (user_input == "forty two"):
+        print("Yes")
+    else:
+        print("NO")
+
 if __name__ == "__main__":
     main()
