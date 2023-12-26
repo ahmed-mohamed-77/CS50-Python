@@ -3,11 +3,11 @@ def main():
     hour = convert(time_str)
 
     if 7.0 <= hour <= 8.0:
-        print("It's breakfast time!")
+        print("It's breakfast time")
     elif 12.0 <= hour <= 13.0:
-        print("It's lunch time!")
+        print("It's lunch time")
     elif 18.0 <= hour <= 19.0:
-        print("It's dinner time!")
+        print("It's dinner time")
 
 def convert(time_str):
     hours, minutes = map(int, time_str.split(":"))
