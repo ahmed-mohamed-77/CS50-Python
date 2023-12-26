@@ -1,14 +1,15 @@
 
 
 def main():
-meal_time = input("Enter times in HH:MM\n").split()
+    meal_time = input("Enter times in HH:MM\n").split()
+    convert(meal_time)
 
-for time in alltimes:
-     hour, min = [int(i) for i in time.split(":")]
-     print(hour, "hours and", min, "minutes")
 
 def convert(time):
-    if time <=
+    for time in alltimes:
+     hour, min = [int(i) for i in time.split(":")]
+
+     if 
 
 if __name__ == "__main__":
     main()
