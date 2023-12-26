@@ -1,14 +1,21 @@
-def main()
+def main():
     file_name = input("File name: ")
-    fname,extension = [int(i) for i in file_name.split(".")]
-    if file_name
-.gif image/gif
-.jpg image/jpeg
-.jpeg image/jpeg
-.png image/png
-.pdf application/pdf
-.txt text/plain
-.zip application/zip
+    fname, extension = file_name.split(".")
 
-if__name__ == "__main__":
+    if extension == "gif":
+        print("image/gif")
+    elif extension == "jpg":
+        print("image/jpeg")
+    elif extension == "jpeg":
+        print("image/jpeg")
+    elif extension == "png":
+        print("image/png")
+    elif extension == "pdf":
+        print("application/pdf")
+    elif extension == "txt":
+        print("text/plain")
+    elif extension == "zip":
+        print("application/zip")
+
+if __name__ == "__main__":
     main()
