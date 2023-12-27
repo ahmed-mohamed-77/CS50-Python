@@ -7,8 +7,16 @@ def main():
 
 
 def is_valid(plate_number):
-    if 2 <= plate_number <= 6:
-        
+   # Check if linces less than 2 numbers
+   if plate_number < 2:
+       return False
+
+    # check if linces greater 6 numbers and characters
+   if plate_number > 6:
+       return False
+
+   
+
 
 
 main()
