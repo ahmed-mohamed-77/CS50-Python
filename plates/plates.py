@@ -7,15 +7,14 @@ def main():
 
 
 def is_valid(plate_number):
-   # Check if linces less than 2 numbers
-   if plate_number < 2:
-       return False
+    # Check if plate number has less than 2 or more than 6 characters
+    if len(plate_number) < 2 or len(plate_number) > 6:
+        return False
 
-    # check if linces greater 6 numbers and characters
-   if plate_number > 6:
-       return False
+    # Check if plate number starts with at least two letters
+    if not plate_number[:2].isalpha():
+        return False
 
-   
 
 
 
