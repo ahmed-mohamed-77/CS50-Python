@@ -7,7 +7,8 @@ def main():
 
 
 def is_valid(plate_number):
-    
+    if 2 <= plate_number <= 6:
+        
 
 
 main()
