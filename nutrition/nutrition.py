@@ -1,6 +1,6 @@
 def main():
     # take the user input
-    user_input = input("Item: ").strip().capitalize()
+    user_input = input("Item: ").strip().title()
 
     # fruits with calories
     fruits = {
