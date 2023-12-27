@@ -15,7 +15,7 @@ def is_valid(plate_number):
         return False
 
     # Check if numbers are used in the middle of the plate
-    if any(char.isdigit() for char in plate_number[2:-1]):
+    if any(char.isdigit() for char in plate_number[2:-2]):
         return False
 
     # Check if the first number used is '0'
