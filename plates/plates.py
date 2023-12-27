@@ -14,11 +14,8 @@ def is_valid(plate_number):
     if not plate_number[:2].isalpha():
         return False
 
-    if len(plate_number) == 4 and any(num.isdigit() for num in plate_number[1:-2]):
-        return False
-
     # Check if numbers are used in the middle of the plate
-    if  any(char.isdigit() for char in plate_number[2:-2]):
+    if any(char.isdigit() for char in plate_number[2:-1]):
         return False
 
     # Check if the first number used is '0'
