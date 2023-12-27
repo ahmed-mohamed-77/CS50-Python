@@ -13,8 +13,8 @@ def main():
     }
 
     for fruit in fruits:
-        if user_input in fruit:
-            print(fruits[fruit])
+        if user_input i :
+            print(f"Calories: {fruits[fruit]}")
 
 
 if __name__ == "__main__":
