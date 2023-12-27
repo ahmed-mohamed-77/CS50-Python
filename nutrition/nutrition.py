@@ -4,7 +4,7 @@ def main():
 
     # fruits with calories
     fruits = {
-        "apple" : 130, "Avocade" : 50, "Banana" : 110, "Cantaloupe" : 50,
+        "apple" : 130, "Avocado" : 50, "Banana" : 110, "Cantaloupe" : 50,
         "Grapefruit" : 60, "Grapes" : 90, "honeydew Melon" : 50,
         "Kiwifruit" : 90, "Lemon" : 15, "Lime" : 20, "Nectarine" : 60,
         "Orange" : 80, "Peach" : 60, "Pear" : 100, "Pineapple" : 50,
@@ -13,7 +13,7 @@ def main():
     }
 
     for fruit in fruits:
-        if user_input i :
+        if fruit == user_input:
             print(f"Calories: {fruits[fruit]}")
 
 
