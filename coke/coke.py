@@ -6,7 +6,6 @@ while coke_price > 0:
 
     if customer_coin in due_coins:
         coke_price -= customer_coin
-    else:
-        print("The machine only accepts coins of [25, 10, 5]")
+        print(f"Change Owed: {coke_price}")
 
-print(f"Change Owed: {coke_price}")
+
