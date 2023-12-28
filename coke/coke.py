@@ -7,10 +7,11 @@ while coke_price > 0:
 
     if customer_coin not in due_coin:
         print(f"Amount Due: {coke_price}")
+        
     elif customer_coin in due_coins:
         coke_price -= customer_coin
         print(f"Amount Due: {coke_price}")
-        
+
 print(f"Change Owed: {coke_price}")
 
 
