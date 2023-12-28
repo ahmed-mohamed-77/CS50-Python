@@ -12,6 +12,6 @@ while coke_price > 0:
         print(f"Amount Due: {coke_price}")
 
 
-print(f"Change Owed: {coke_price}")
+print(f"Change Owed: {abs(coke_price)}")
 
 
