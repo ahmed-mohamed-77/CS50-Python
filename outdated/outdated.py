@@ -8,34 +8,26 @@ while True:
     outdated = input("Date: ")
 
     try:
-        day_out, month_out, year_out = map(int, outdated.split("/"))
+        # Attempt to parse the input with slashes (MM/DD/YYYY format)
+        month_out, day_out, year_out = map(int, outdated.split("/"))
         if (1 <= month_out <= 12) and (1 <= day_out <= 31):
             break
     except ValueError:
         try:
-            day_out, month_out, year_out = outdated.split(" ")
+            # Attempt to parse the input with full month name (Month Day, Year format)
+            parts = outdated.split(" ")
+            day_out = parts[1].replace(",", "")
+            month_out = parts[0]
+            year_out = parts[2]
 
-            # to print the position month
-            for num in range(len(months)):
-                if month_out == months[num]:
-                    month_position = num + 1
+            # Find the position of the month in the list
+            month_position = months.index(month_out) + 1
 
-            day_out = day_out.replace(",", "")
             if (1 <= month_position <= 12) and (1 <= int(day_out) <= 31):
                 break
         except ValueError:
-            try:
-                day_out, month_out, year_out = outdated.split(" ")
+            # Print an error message for invalid date formats
+            print("Invalid date format. Please enter a valid date.")
 
-                # to print the position month
-                for num in range(len(months)):
-                    if month_out == months[num]:
-                        month_position = num + 1
-
-                day_out = day_out.replace(",", "")
-                if (1 <= month_position <= 12) and (1 <= int(day_out) <= 31):
-                    break
-            except ValueError:
-                print("Invalid date format. Please enter a valid date.")
-
+# Print the formatted date
 print(f"{year_out}-{month_position:02d}-{int(day_out):02d}")
