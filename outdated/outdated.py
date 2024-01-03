@@ -27,4 +27,4 @@ while True:
             print("Invalid date format. Please enter a valid date.")
 
 # Print the formatted date
-print(f"{year_out}-{month_out:02}-{int(day_out):02}")
+print(f"{year_out}-{month_out:02d}-{int(day_out):02d}")
