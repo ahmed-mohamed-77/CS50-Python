@@ -1,40 +1,29 @@
-import datetime
-
-month = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
 ]
 
-try:
+while True:
     # Get the input date from the user
     outdated = input("Date: ")
 
-    # Check if the input date contains slashes (MM/DD/YYYY format)
-    if "/" in outdated:
-        # If slashes are present, split the input using slashes
+    try:
+        # Attempt to parse the input with slashes (MM/DD/YYYY format)
         month_out, day_out, year_out = map(int, outdated.split("/"))
+        if (1 <= month_out <= 12) and (1 <= day_out <= 31):
+            break
+    except ValueError:
+        try:
+            # Attempt to parse the input with full month name (Month Day, Year format)
+            month_out, day_out, year_out = outdated.split(" ")
+            # Find the position of the month in the list
+            month_position = months.index(month_out) + 1
+            day_out = day_out.replace(",", "")
+            if (1 <= month_position <= 12) and (1 <= int(day_out) <= 31):
+                break
+        except ValueError:
+            # Print an error message if neither format matches
+            print("Invalid date format. Please enter a valid date.")
 
-        # Create a datetime object with the parsed values
-        updated_date = datetime.datetime(year_out, month_out, day_out)
-
-        # Print the formatted date
-        print(updated_date.strftime("%Y-%m-%d"))
-
-    # If no slashes are present, assume the input date is in "Month Day, Year" format
-    else:
-        # Parse the input date using strptime with the format "%B %d, %Y"
-        input_date = datetime.datetime.strptime(outdated, "%B %d, %Y")
-
-        # Print the formatted date
-        print(input_date.strftime("%Y-%m-%d"))
-except:
+# Print the formatted date
+print(f"{year_out}-{month_out:02d}-{int(day_out):02d}")
