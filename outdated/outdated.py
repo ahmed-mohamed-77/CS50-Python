@@ -3,6 +3,8 @@ months = [
     "July", "August", "September", "October", "November", "December"
 ]
 
+month_position = None  # Initialize month_position outside the while loop
+
 while True:
     # Get the input date from the user
     outdated = input("Date: ")
@@ -11,6 +13,7 @@ while True:
         # Attempt to parse the input with slashes (MM/DD/YYYY format)
         month_out, day_out, year_out = map(int, outdated.split("/"))
         if (1 <= month_out <= 12) and (1 <= day_out <= 31):
+            month_position = month_out
             break
     except ValueError:
         try:
