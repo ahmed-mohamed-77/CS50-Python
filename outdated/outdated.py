@@ -22,7 +22,7 @@ while True:
                     month = i + 1
             if "," in day_out:
                 day_out = day_out.replace(",", "")
-            if (1 <= month_position <= 12) and (1 <= int(day_out) <= 31):
+            if (1 <= month <= 12) and (1 <= int(day_out) <= 31):
                 break
         except ValueError:
             # Print an error message if neither format matches
