@@ -19,7 +19,7 @@ while True:
             # Attempt to parse the input with full month name (Month Day, Year format)
             old_month, old_day, year = outdated.split(" ")
             # Find the position of the month in the list
-            for i in range(len(old_month)):
+            for i in range(len(months)):
                 if old_month == months[i]:
                     month = i + 1
 
