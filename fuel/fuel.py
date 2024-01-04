@@ -7,7 +7,7 @@ while True:
     if numerator > denominator:
       raise ValueError
 
-    result = math.floor((numerator/denominator) * 100)
+    result = round((numerator/denominator) * 100, 0)
     if result <= 1:
       print("E")
     elif result >= 99:
