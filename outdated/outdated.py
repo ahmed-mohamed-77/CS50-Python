@@ -22,15 +22,15 @@ while True:
             for i in range(len(months)):
                 if old_month == months[i]:
                     month = i + 1
-
-            day = old_day.replace(",", "")
+            if "," in old_day:
+              day = old_day.replace(",", "")
 
             if (1 <= int(month) <= 12) and (1 <= int(day) <= 31):
                 break
 
         except ValueError:
             # Print an error message if neither format matches
-            print("Invalid date format. Please enter a valid date.")
+            print()
             pass
 
 # Print the formatted date
