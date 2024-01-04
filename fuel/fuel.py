@@ -11,7 +11,14 @@ while True:
     else:
       raise ValueError
 
-    print(f"%{math.floor((numerator/denominator) * 100)}")
+    result = math.floor((numerator/denominator) * 100)
+    if result <= 1:
+      print("E")
+    elif result >= 99:
+      print("F")
+    else:
+      print(f"%{result}")
+
     break
   except (ValueError, ZeroDivisionError):
     print()
