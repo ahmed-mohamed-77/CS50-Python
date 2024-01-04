@@ -27,7 +27,7 @@ while True:
             if "," in old_day:
                 day = old_day.rstrip(",")
             else:
-                break
+                raise ValueError 
 
             if (int(month) <= 12) and (int(day) <= 31):
                 break
