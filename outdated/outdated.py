@@ -24,7 +24,7 @@ while True:
                 if old_month == months[i]:
                     month = i + 1
             if "," in old_day:
-              day = old_day.replace(",", "")
+              day = old_day.removesuffix(",")
 
             if (int(month) <= 12) and (int(day) <= 31):
                 break
