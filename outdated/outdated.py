@@ -23,7 +23,7 @@ while True:
 
             day = old_day.replace(",", "")
 
-            if (1 <= month <= 12) and (1 <= int(day) <= 31):
+            if (1 <= month <= 12) and (1 <= day <= 31):
                 break
 
         except ValueError:
