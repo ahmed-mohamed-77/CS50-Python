@@ -15,10 +15,10 @@ while True:
     except ValueError:
         try:
             # Attempt to parse the input with full month name (Month Day, Year format)
-            month, day, year = outdated.split(" ")
+            old_month, old_day, year = outdated.split(" ")
             # Find the position of the month in the list
-            for month in months:
-                month =
+            for month in range(len(old_month)):
+                old_month = month + 1
 
             day = day.replace(",", "")
 
