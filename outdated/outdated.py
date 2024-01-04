@@ -17,7 +17,7 @@ while True:
             # Attempt to parse the input with full month name (Month Day, Year format)
             month_out, day_out, year_out = outdated.split(" ")
             # Find the position of the month in the list
-            month_position = months.index(month_out) + 1
+            month_out = months.index(month_out) + 1
 
             day_out = day_out.replace(",", "")
 
@@ -29,4 +29,4 @@ while True:
             print()
             pass
 # Print the formatted date
-print(f"{year_out}-{month_position:02d}-{int(day_out):02d}")
+print(f"{year_out}-{month_out:02d}-{int(day_out):02d}")
