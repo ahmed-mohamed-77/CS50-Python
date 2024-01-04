@@ -19,7 +19,7 @@ while True:
             # Find the position of the month in the list
             for i in range(len(old_month)):
                 if old_month == months[i]:
-                month = i + 1
+                    month = i + 1
 
              day = old_day.replace(",", "")
 
