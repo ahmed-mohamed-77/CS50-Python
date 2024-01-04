@@ -14,7 +14,7 @@ while True:
         if (int(month) <= 12) and (int(day) <= 31):
             break
 
-    except:
+    except ValueError:
         try:
             # Attempt to parse the input with full month name (Month Day, Year format)
             old_month, old_day, year = outdated.split(" ")
@@ -32,7 +32,7 @@ while True:
             if (int(month) <= 12) and (int(day) <= 31):
                 break
 
-        except ValueError:
+        except (ValueError, NameError):
             # Print an error message if neither format matches
             print()
             pass
