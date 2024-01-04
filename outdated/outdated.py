@@ -5,7 +5,7 @@ months = [
 
 while True:
     # Get the input date from the user
-    outdated = input("Date: ")
+    outdated = input("Date: ").strip()
 
     try:
         # Attempt to parse the input with slashes (MM/DD/YYYY format)
