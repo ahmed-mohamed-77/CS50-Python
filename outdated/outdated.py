@@ -3,7 +3,7 @@ import datetime
 # September 8 1636 => %B%w%Y
 # 8 September 1636 => %B%w%Y
 # 9/8/1636 => %-d%-m%Y
-user_date = input("Date: ")
+user_date = input("Date: ").strip()
 
 # Define multiple format strings for parsing
 formats = ["%B %d, %Y", "%B %d %Y", "%d %B %Y", "%m/%d/%Y"]
