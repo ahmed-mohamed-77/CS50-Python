@@ -30,5 +30,6 @@ while True:
             # Print an error message if neither format matches
             print()
             pass
+        
 # Print the formatted date
 print(f"{year}-{month:02d}-{int(day):02d}")
