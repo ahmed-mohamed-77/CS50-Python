@@ -6,10 +6,6 @@ while True:
     numerator, denominator = map(int, user_input.split("/"))
     if numerator > denominator:
       raise ValueError
-    if denominator <= 4:
-      denominator = denominator
-    else:
-      raise ValueError
 
     result = math.floor((numerator/denominator) * 100)
     if result <= 1:
