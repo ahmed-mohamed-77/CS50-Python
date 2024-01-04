@@ -29,4 +29,4 @@ while True:
             print()
             pass
 # Print the formatted date
-print(f"{year_out}-{int(month_out):02d}-{int(day_out):02d}")
+print(f"{year_out}-{month_out:02d}-{int(day_out):02d}")
