@@ -1,12 +1,16 @@
+
+my_dict = {}
 while True:
     try:
-        items = []
         item = input()
-        items.append(item)
+
+        # check if item is does exist in dictionary
+        if item in my_dict:
+          my_dict[item] += 1
+        else:
+          my_dict[item] = 1
 
     except EOFError:
-        print()
-        pass
-    else:
-        for i in range(len(items)):
-            print((i + 1), items[i])
+        for i in sorted(my_dict.keys()):
+            print(my_dict[i], i.upper())
+        break
