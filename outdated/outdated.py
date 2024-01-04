@@ -7,6 +7,8 @@ while True:
     # Get the input date from the user
     outdated = input("Date: ")
 
+    month = None  # Initialize month here
+
     try:
         # Attempt to parse the input with slashes (MM/DD/YYYY format)
         month, day, year = map(int, outdated.split("/"))
@@ -28,24 +30,8 @@ while True:
 
         except ValueError:
             # Print an error message if neither format matches
-            print()
+            print("Invalid date format. Please enter a valid date.")
             pass
 
 # Print the formatted date
 print(f"{year}-{int(month):02d}-{int(day):02d}")
-
-
-Date: December 80, 1980
-Traceback (most recent call last):
-  File "/home/ubuntu/CS50-Python/outdated/outdated.py", line 12, in <module>
-    month, day, year = map(int, outdated.split("/"))
-    ^^^^^^^^^^^^^^^^
-ValueError: invalid literal for int() with base 10: 'December 80, 1980'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/ubuntu/CS50-Python/outdated/outdated.py", line 26, in <module>
-    if (1 <= int(month) <= 12) and (1 <= int(day) <= 31):
-                 ^^^^^
-NameError: name 'month' is not defined. Did you mean: 'months'?
