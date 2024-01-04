@@ -6,7 +6,7 @@ import datetime
 user_date = input("Date: ").strip()
 
 # Define multiple format strings for parsing
-formats = ["%B %d, %Y", "%B %d %Y", "%d %B %Y", "%m/%d/%Y"]
+formats = ["%B %d, %Y", "%B %d %Y", "%d %B %Y", "%m/%d/%Y", "%d/%m/%Y", "%B/%d/%Y"]
 parse_date = None
 for fmt in formats:
   try:
