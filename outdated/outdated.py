@@ -23,13 +23,13 @@ while True:
 
              day = old_day.replace(",", "")
 
-            if (1 <= month_position <= 12) and (1 <= int(day) <= 31):
+            if (1 <= month <= 12) and (1 <= int(day) <= 31):
                 break
 
         except ValueError:
             # Print an error message if neither format matches
             print()
             pass
-        
+
 # Print the formatted date
 print(f"{year}-{month:02d}-{int(day):02d}")
