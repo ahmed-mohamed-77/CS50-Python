@@ -32,4 +32,4 @@ while True:
             pass
 
 # Print the formatted date
-print(f"{year}-{month:02d}-{int(day):02d}")
+print(f"{year}-{int(month):02d}-{int(day):02d}")
