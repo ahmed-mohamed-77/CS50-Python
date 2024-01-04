@@ -18,7 +18,7 @@ while True:
             old_month, old_day, year = outdated.split(" ")
             # Find the position of the month in the list
             for i in range(len(old_month)):
-                old_month == month[i]:
+                if old_month == months[i]:
                 month = i + 1
 
              day = old_day.replace(",", "")
