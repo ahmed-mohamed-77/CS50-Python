@@ -1,3 +1,4 @@
+import math
 while True:
   try:
     #  percentage=(denominator / numerator)×100
@@ -10,7 +11,7 @@ while True:
     else:
       raise ValueError
 
-    print(f"%{(numerator/denominator) * 100}")
+    print(f"%{math.floor((numerator/denominator) * 100)}")
     break
   except (ValueError, ZeroDivisionError):
     print()
