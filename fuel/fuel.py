@@ -17,7 +17,7 @@ while True:
     elif result >= 99:
       print("F")
     else:
-      print(f"%{result}")
+      print(f"{result}%")
 
     break
   except (ValueError, ZeroDivisionError):
