@@ -9,19 +9,20 @@ while True:
 
     try:
         # Attempt to parse the input with slashes (MM/DD/YYYY format)
-        month_out, day_out, year_out = map(int, outdated.split("/"))
-        if (1 <= month_out <= 12) and (1 <= day_out <= 31):
+        month, day, year = map(int, outdated.split("/"))
+        if (1 <= month <= 12) and (1 <= day <= 31):
             break
     except ValueError:
         try:
             # Attempt to parse the input with full month name (Month Day, Year format)
-            month_out, day_out, year_out = outdated.split(" ")
+            month, day, year = outdated.split(" ")
             # Find the position of the month in the list
-            month_out = months.index(month_out) + 1
+            for month in months:
+                month =
 
-            day_out = day_out.replace(",", "")
+            day = day.replace(",", "")
 
-            if (1 <= month_position <= 12) and (1 <= int(day_out) <= 31):
+            if (1 <= month_position <= 12) and (1 <= int(day) <= 31):
                 break
 
         except ValueError:
@@ -29,4 +30,4 @@ while True:
             print()
             pass
 # Print the formatted date
-print(f"{year_out}-{month_out:02d}-{int(day_out):02d}")
+print(f"{year}-{month:02d}-{int(day):02d}")
