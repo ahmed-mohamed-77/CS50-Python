@@ -1,21 +1,30 @@
-import datetime
-# September 8, 1636 => %B%w%Y
-# September 8 1636 => %B%w%Y
-# 8 September 1636 => %B%w%Y
-# 9/8/1636 => %-d%-m%Y
-user_date = input("Date: ").strip()
+months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+]
 
-# Define multiple format strings for parsing
-formats = ["%B %d, %Y", "%m/%d/%Y"]
-parse_date = None
-for fmt in formats:
-  try:
-    parse_date = datetime.datetime.strptime(user_date, fmt).date()
-    break # if parse is successful
-  except ValueError:
-    pass # continue trying other formats
+while True:
+    # Get the input date from the user
+    outdated = input("Date: ")
 
-if parse_date:
-  unified_date = "%Y-%m-%d"
-  formatted_date = parse_date.strftime(unified_date)
-  print(formatted_date)
+    try:
+        # Attempt to parse the input with slashes (MM/DD/YYYY format)
+        month_out, day_out, year_out = map(int, outdated.split("/"))
+        if (1 <= month_out <= 12) and (1 <= day_out <= 31):
+            break
+    except ValueError:
+        try:
+            # Attempt to parse the input with full month name (Month Day, Year format)
+            month_out, day_out, year_out = outdated.split(" ")
+            # Find the position of the month in the list
+            month_position = months.index(month_out) + 1
+            if "," in day_out:
+                day_out = day_out.replace(",", "")
+            if (1 <= month_position <= 12) and (1 <= int(day_out) <= 31):
+                break
+        except ValueError:
+            # Print an error message if neither format matches
+            print("Invalid date format. Please enter a valid date.")
+
+# Print the formatted date
+print(f"{year_out}-{int(month_out):02d}-{int(day_out):02d}")
