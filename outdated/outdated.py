@@ -18,13 +18,12 @@ while True:
             month_out, day_out, year_out = outdated.split(" ")
             # Find the position of the month in the list
             month_position = months.index(month_out) + 1
-            if "," in day_out:
-                day_out = day_out.replace(",", "")
+            day_out = day_out.replace(",", "")
             if (1 <= month_position <= 12) and (1 <= int(day_out) <= 31):
                 break
         except ValueError:
             # Print an error message if neither format matches
-            print("Invalid date format. Please enter a valid date.")
-
+            print()
+            pass
 # Print the formatted date
 print(f"{year_out}-{int(month_out):02d}-{int(day_out):02d}")
