@@ -1,4 +1,3 @@
-import math
 while True:
   try:
     #  percentage=(denominator / numerator)×100
@@ -7,7 +6,7 @@ while True:
     if numerator > denominator:
       raise ValueError
 
-    result = round((numerator/denominator) * 100, 0)
+    result = round((numerator/denominator) * 100)
     if result <= 1:
       print("E")
     elif result >= 99:
