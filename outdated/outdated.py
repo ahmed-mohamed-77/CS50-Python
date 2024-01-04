@@ -17,10 +17,11 @@ while True:
             # Attempt to parse the input with full month name (Month Day, Year format)
             old_month, old_day, year = outdated.split(" ")
             # Find the position of the month in the list
-            for month in range(len(old_month)):
-                old_month = month + 1
+            for i in range(len(old_month)):
+                old_month == month[i]:
+                month = i + 1
 
-            day = day.replace(",", "")
+             day = old_day.replace(",", "")
 
             if (1 <= month_position <= 12) and (1 <= int(day) <= 31):
                 break
