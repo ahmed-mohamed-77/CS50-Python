@@ -11,7 +11,7 @@ while True:
 
     try:
         # Attempt to parse the input with slashes (MM/DD/YYYY format)
-        month, day, year = map(int, outdated.split("/"))
+        month, day, year =  outdated.split("/")
 
         if (int(month) <= 12) and (int(day) <= 31):
             break
