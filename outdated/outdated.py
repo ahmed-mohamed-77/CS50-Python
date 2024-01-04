@@ -9,7 +9,7 @@ while True:
 
     try:
         # Attempt to parse the input with slashes (MM/DD/YYYY format)
-        month, day, year =  outdated.split("/")
+        month, day, year = outdated.split("/")
 
         if (int(month) <= 12) and (int(day) <= 31):
             break
@@ -25,7 +25,9 @@ while True:
                     month = i + 1
 
             if "," in old_day:
-              day = old_day.removesuffix(",")
+                day = old_day.rstrip(",")
+            else:
+                day = old_day
 
             if (int(month) <= 12) and (int(day) <= 31):
                 break
