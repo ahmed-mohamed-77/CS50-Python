@@ -15,4 +15,3 @@ while True:
         for key in sorted(grocery.keys()):
             print(grocery[key], key.upper())
         break
-print(grocery.items())
