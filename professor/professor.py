@@ -3,6 +3,7 @@ def main():
     while True:
         # Get the user's chosen level
         user = get_level()
+        error_counter = 0
         if 0 < user <= 3:
         # Loop for 10 questions
             for i in range(10):
@@ -18,6 +19,7 @@ def main():
                         counter = i + 1  # Increment counter for correct answers
                     else:
                         print("EEE")  # Print error message for incorrect answers
+                        if err
                 except ValueError:
                     pass  # Ignore ValueError (non-integer input)
             if 0 < user <= 3:
