@@ -6,8 +6,6 @@ def main():
     score = simulate_game(user)
     print(f"Score: {score}")
 
-
-
 def get_level():
     while True:
         try:
@@ -27,11 +25,11 @@ def generate_integer(level):
         x = random.randint(0, 9)
         y = random.randint(0, 9)
     elif level == 2:
-        x = random.randint(10, 999)
-        y = random.randint(10, 999)
+        x = random.randint(10, 99)
+        y = random.randint(10, 99)
     elif level == 3:
-        x = random.randint(10, 999)
-        y = random.randint(10, 999)
+        x = random.randint(100, 999)
+        y = random.randint(100, 999)
     return x, y
 
 def check_answer(x:int, y:int) :
