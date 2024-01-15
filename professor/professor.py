@@ -38,14 +38,15 @@ def get_level():
 def generate_integer(level):
     # Generate random integers based on the user's chosen level
     if level == 1:
-        x = random.randint(0, 10)
-        y = random.randint(1, 10)
+        x = random.randint(0, 9)
+        y = random.randint(0, 9)
     elif level == 2:
-        x = random.randint(1, 100)
-        y = random.randint(1, 100)
+        x = random.randint(10, 999)
+        y = random.randint(10, 999)
     elif level == 3:
-        x = random.randint(1, 1000)
-        y = random.randint(1, 1000)
+        x = random.randint(10, 999)
+        y = random.randint(10, 999)
+    return x, y
 
 
 
