@@ -32,8 +32,9 @@ def main():
 
 
 def get_level():
+    while True:
     # Prompt the user for the desired level (1, 2, or 3)
-    return int(input("Level: "))
+        level =  int(input("Level: "))
 
 
 def generate_integer(level):
