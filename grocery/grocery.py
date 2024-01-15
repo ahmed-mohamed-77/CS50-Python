@@ -1,6 +1,17 @@
-my_dict = {}
+# create empty dictionary
+grocery = {}
 
-try:
-    item = input()
-except EOFError:
-    ...
+# create infinite loop
+while True:
+    try:
+        # get the user input
+        item = input()
+        if item in grocery:
+          grocery["item"] += 1
+        else:
+          grocery["item"] = 1
+
+    except EOFError:
+        for key in grocery:
+          print(key, grocery[key])
+        break
