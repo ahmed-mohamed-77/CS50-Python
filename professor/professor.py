@@ -1,40 +1,24 @@
 import random
 def main():
+    # Get the user's chosen level
+    user = get_level()
+    # Loop for 10 questions
+    score = simulate_game(user)
+    print(f"Score: {score}")
 
-    try:
-        # Get the user's chosen level
-        user = get_level()
-        error_counter = 0
-        if not (0 < user <= 3):
-            raise ValueError
-        # Loop for 10 questions
-        for i in range(10):
-                # Generate random integers based on the user's level
-                x, y = generate_integer(user)
-
-                # Prompt the user for an answer
-                user_answer = int(input(f"{x} + {y} = "))
-
-                # Check if the user's answer is correct
-                if user_answer == (x + y):
-                    counter = i + 1  # Increment counter for correct answers
-                else:
-                    print("EEE")  # Print error message for incorrect answers
-                    error_counter += 1
-                    if error_counter == 3:
-                        print(f"{x} + {y} = {x + y}")
-                        error_counter = 0
-    except ValueError:
-        pass  # Ignore ValueError (non-integer input)
-
-    # Print the user's final score
-    print(f"Score: {counter}")
 
 
 def get_level():
     while True:
+        try:
     # Prompt the user for the desired level (1, 2, or 3)
-        level =  int(input("Level: "))
+            level =  int(input("Level: "))
+            if 0 < level <= 3:
+                return level
+            else:
+                raise ValueError
+        except ValueError:
+            pass
 
 
 def generate_integer(level):
@@ -50,7 +34,35 @@ def generate_integer(level):
         y = random.randint(10, 999)
     return x, y
 
+def check_answer(x:int, y:int) :
+    count_tries = 1
+    while count_tries <= 3:
+        try:
+            # Prompt the user for an answer
+            user_answer = int(input(f"{x} + {y} = "))
+            # Check if the user's answer is correct
+            if user_answer == (x + y):
+                return True
+            else:
+                count_tries += 1
+                print("EEE")
+        except ValueError:
+            count_tries += 1
+            print("EEE")
 
+    print(f"{x} + {y} = {x + y}")
+    return False
+
+def simulate_game(level):
+    count_round = 1
+    score = 0
+    while count_round <= 10:
+        x,y =generate_integer(level)
+        response = check_answer(x, y)
+        if response == True:
+            score += 1
+        count_round += 1
+    return score
 
 if __name__ == "__main__":
     main()
