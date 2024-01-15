@@ -12,6 +12,6 @@ while True:
           grocery["item"] = 1
 
     except EOFError:
-        for key in grocery:
+        for key in sorted(grocery.key()):
           print(key, grocery[key])
         break
