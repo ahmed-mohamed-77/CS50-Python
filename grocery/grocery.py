@@ -5,7 +5,8 @@ grocery = {}
 while True:
     try:
         # get the user input
-        item = input()
+        item = input().strip().lower()
+        
         if item in grocery:
           grocery["item"] += 1
         else:
