@@ -38,7 +38,7 @@ def get_level():
 def generate_integer(level):
     # Generate random integers based on the user's chosen level
     if level == 1:
-        x = random.randint(1, 10)
+        x = random.randint(0, 10)
         y = random.randint(1, 10)
     elif level == 2:
         x = random.randint(1, 100)
@@ -46,9 +46,7 @@ def generate_integer(level):
     elif level == 3:
         x = random.randint(1, 1000)
         y = random.randint(1, 1000)
-    else:
-        sys.exit("max level is 3")  # Exit the program for an invalid level
-    return x, y
+
 
 
 if __name__ == "__main__":
