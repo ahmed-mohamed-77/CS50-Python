@@ -5,6 +5,7 @@ def main():
 
           percentage = convert(user)
           gauge(percentage)
+          break
 
       except (ValueError, ZeroDivisionError):
           ...
