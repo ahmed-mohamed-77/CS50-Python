@@ -3,22 +3,15 @@ def main():
       try:
           user = input("Fraction: ").strip()
 
-          result = percentage(user)
+          percentage = convert(user)
+          gauge(percentage)
 
-          if result >= 99:
-              print("F")
-          elif result <= 1:
-              print("E")
-          else:
-              print(f"{result}%")
-
-          break
       except (ValueError, ZeroDivisionError):
           ...
 
 
-def percentage(fraction):
 
+def convert(fraction):
     number_one, number_two = map(int, fraction.split("/"))
 
     if number_one > number_two:
@@ -26,6 +19,16 @@ def percentage(fraction):
 
     result = round((number_one / number_two) * 100)
     return result
+
+
+
+def gauge(percentage):
+    if percentage >= 99:
+        print("F")
+    elif percentage <= 1:
+        print("E")
+    else:
+        print(f"{percentage}%")
 
 
 if __name__ == "__main__":
