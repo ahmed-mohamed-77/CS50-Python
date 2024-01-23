@@ -47,16 +47,14 @@ def main():
 
 
 def percentage(fraction):
-    try:
-        number_one, number_two = map(int, fraction.split("/"))
 
-        if number_one > number_two:
-            raise ValueError
+    number_one, number_two = map(int, fraction.split("/"))
 
-        result = round((number_one / number_two) * 100)
-        return result
-    except (ValueError, ZeroDivisionError):
-        ...
+    if number_one > number_two:
+        raise ValueError
+
+    result = round((number_one / number_two) * 100)
+    return result
 
 
 if __name__ == "__main__":
