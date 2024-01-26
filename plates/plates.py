@@ -16,14 +16,16 @@ def is_valid(plate_number):
 
     if plate_number[0].isalpha() == False or  plate_number[1].isalpha() == False:
         return False
+    i = 0
 
-    for i in plate_number:
+    while i < len(plate_number) :
+
         if plate_number[i].isalpha() == False:
             if plate_number[i] == "0":
                 return False
             else:
                 break
-
+        i += 1
 
     for character in plate_number:
         if character in [".", " ", "!", "?"]:
