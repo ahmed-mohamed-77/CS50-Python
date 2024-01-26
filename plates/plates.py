@@ -26,15 +26,7 @@ def is_valid(plate_number):
             else:
                 break
         i += 1
-
-    j = 0
-    while j < len(n):
-        if n[j].isnumeric() == True:
-            if n[j + 1].isalpha() == False:
-                return False
-            else:
-                break
-        j += 1
+    
 
     for character in plate_number:
         if character in [".", " ", "!", "?"]:
