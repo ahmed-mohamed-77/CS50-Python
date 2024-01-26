@@ -2,12 +2,12 @@ import sys
 
 def main():
     plate = input("Plate: ")
-    if is_valid(plate):
-        print("Valid")
-        sys.exit(0)  # Exit with code 0 for success
-    else:
+    if not is_valid(plate):
         print("Invalid")
         sys.exit(1)  # Exit with a non-zero code for failure
+    else:
+        print("Valid")
+        sys.exit(0)  # Exit with code 0 for success
 
 def is_valid(s):
     return check_length(s) and check_begin(s) and check_spec(s) and check_numbers(s)
