@@ -10,7 +10,7 @@ def is_valid(plate_number):
     # check for the  length palte_number
     # max == 6
     # min == 2
-    if 2 > len(plate_number) > 6:
+    if len(plate_number) < 2 or len(plate_number) > 6:
         return False
 
 
