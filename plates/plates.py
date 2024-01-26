@@ -14,10 +14,11 @@ def is_valid(s):
 
 
 def check_length(s):
-    if not 2<= len(s) <= 6:
+    if len(s) < 2 or len(s) > 6:
         return False
     else:
         return True
+
 
 def check_begin(s):
     for c in s[:2]:
@@ -31,6 +32,7 @@ def check_spec(s):
         if not c.isalpha() and not c.isdigit():
             return False
     return True
+
 
 def check_numbers(s):
     firstnum = None
@@ -48,6 +50,7 @@ def check_numbers(s):
         if not c.isdigit():
             return False
     return True
+
 
 if __name__ == "__main__":
     main()
