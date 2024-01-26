@@ -4,23 +4,50 @@ def main():
         print("Valid")
     else:
         print("Invalid")
+
+
 def is_valid(s):
-    if not s.isalnum():
+    if check_length(s) and check_begin(s) and check_spec(s) and check_numbers(s):
+        return True
+    else:
         return False
-    elif len(s) < 4 or len(s) > 7:
-        return False
-    elif s[0].isdigit()or s[1].isdigit():
-        return False
-    elif s[-1].isalpha() or s[-2].isalpha():
+
+
+def check_length(s):
+    if not 2<= len(s) <= 6:
         return False
     else:
-        ls = list(s)
-        for i in range(len(ls)):
-            if ls[i].isdigit():
-                if ls[i] == '0':
-                    return False
-                elif i < len(ls) -1 and ls[i+1].isalpha():
-                    return False
-                else:
-                    return True
+        return True
+
+def check_begin(s):
+    for c in s[:2]:
+        if c.isdigit():
+            return False
+    return True
+
+
+def check_spec(s):
+    for c in s:
+        if not c.isalpha() and not c.isdigit():
+            return False
+    return True
+
+def check_numbers(s):
+    firstnum = None
+    for c in s:
+        if c.isdigit():
+            firstnum = c
+            break
+    if firstnum == None:
+        return True
+    if int(firstnum) == 0:
+        return False
+    index = s.index(firstnum)
+    position = len(s) - index
+    for c in s[-position:]:
+        if not c.isdigit():
+            return False
+    return True
+
+
 main()
