@@ -4,36 +4,23 @@ def main():
         print("Valid")
     else:
         print("Invalid")
-
-
-def is_valid(plate_number):
-    # check for the  length palte_number
-    # max == 6
-    # min == 2
-    if len(plate_number) < 2 or len(plate_number) 6:
+def is_valid(s):
+    if not s.isalnum():
         return False
-
-
-    if plate_number[0].isalpha() == False or  plate_number[1].isalpha() == False:
+    elif len(s) < 4 or len(s) > 7:
         return False
-    i = 0
-
-    while i < len(plate_number) :
-
-        if plate_number[i].isalpha() == False:
-            if plate_number[i] == "0":
-                return False
-            else:
-                break
-        i += 1
-    
-
-    for character in plate_number:
-        if character in [".", " ", "!", "?"]:
-            return False
-
-    return True
-
-
-if __name__ == "__main__":
-    main()
+    elif s[0].isdigit()or s[1].isdigit():
+        return False
+    elif s[-1].isalpha() or s[-2].isalpha():
+        return False
+    else:
+        ls = list(s)
+        for i in range(len(ls)):
+            if ls[i].isdigit():
+                if ls[i] == '0':
+                    return False
+                elif i < len(ls) -1 and ls[i+1].isalpha():
+                    return False
+                else:
+                    return True
+main()
