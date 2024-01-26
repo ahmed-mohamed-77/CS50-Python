@@ -13,8 +13,6 @@ def is_valid(plate_number):
     if 2 > len(plate_number) > 6:
         return False
 
-    if isinstance(int, plate_number[-1]) == True:
-        return False
 
     if plate_number[0].isalpha() == False or  plate_number[1].isalpha() == False:
         return False
