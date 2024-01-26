@@ -1,4 +1,4 @@
-from plates.plates import is_valid
+from plates.plates import *
 
 def test_is_valid():
     assert is_valid("H") == "Invalid"
