@@ -1,11 +1,5 @@
 from plates.plates import *
 
-def main():
-    test_is_valid()
-    test_check_lengh()
-    min_max_character()
-    test_num_zero()
-    test_punctuation()
 
 def test_is_valid():
     assert is_valid("H") == False
@@ -35,6 +29,4 @@ def test_punctuation():
     assert is_valid("PT 314") == False
 
 
-if __name__ == "__main__":
-    main()
 
