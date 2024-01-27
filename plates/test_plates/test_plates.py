@@ -14,7 +14,7 @@ def test_check_lengh():
     assert is_valid("2A") == False
     assert is_valid("22") == False
 
-def min_max_character():
+def test_min_max_character():
     assert is_valid("ABCDEFGH") == False
     assert is_valid("H") == False
     assert is_valid("A") == False
