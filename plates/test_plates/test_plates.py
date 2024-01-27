@@ -1,4 +1,4 @@
-from plates.plates import *
+from plates.plates import is_valid
 
 
 def test_length():
