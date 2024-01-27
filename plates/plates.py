@@ -1,25 +1,28 @@
-import sys
-
 def main():
     plate = input("Plate: ")
     if is_valid(plate):
         print("Valid")
-        sys.exit(0)  # Exit with code 0 for success
+        return True
     else:
         print("Invalid")
-        sys.exit(1)  # Exit with a non-zero code for failure
+        return False
+
 
 def is_valid(s):
     return check_length(s) and check_begin(s) and check_spec(s) and check_numbers(s)
 
+
 def check_length(s):
     return 2 <= len(s) <= 6
+
 
 def check_begin(s):
     return not any(c.isdigit() for c in s[:2])
 
+
 def check_spec(s):
     return all(c.isalpha() or c.isdigit() for c in s)
+
 
 def check_numbers(s):
     firstnum = next((c for c in s if c.isdigit()), None)
@@ -30,6 +33,7 @@ def check_numbers(s):
     index = s.index(firstnum)
     position = len(s) - index
     return all(c.isdigit() for c in s[-position:])
+
 
 if __name__ == "__main__":
     main()
