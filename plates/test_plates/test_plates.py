@@ -27,6 +27,3 @@ def test_punctuation():
     assert is_valid("PT3.14") == False
     assert is_valid("PT!314") == False
     assert is_valid("PT 314") == False
-
-
-
