@@ -6,6 +6,7 @@ def test_length():
     assert is_valid("WXCS2976") == False
     assert is_valid("WX") == True
     assert is_valid("KY7689") == True
+    assert is_valid("CS50") == True
 
 def test_firstTwoCharacter():
     # must start with at least 2 letters
