@@ -3,10 +3,10 @@ def main():
         plate = input("Plate: ")
         if is_valid(plate):
             print("Valid")
-            return True
+            # return True
         else:
             print("Invalid")
-            return False
+            # return False
 
 
 def is_valid(s):
