@@ -25,14 +25,14 @@ def check_spec(s):
 
 
 def check_numbers(s):
-    firstnum = next((c for c in s if c.isdigit()), None)
-    if firstnum is None:
-        return True
-    if int(firstnum) == 0:
-        return False
-    index = s.index(firstnum)
-    position = len(s) - index
-    return all(c.isdigit() for c in s[-position:])
+    i = 0
+
+    while i < len(plate_number) :
+
+        if plate_number[i].isalpha() == False:
+            if plate_number[i] == "0":
+                return False
+        i += 1
 
 
 if __name__ == "__main__":
