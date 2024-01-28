@@ -27,10 +27,10 @@ def check_spec(s):
 def check_numbers(s):
     i = 0
 
-    while i < len(plate_number) :
+    while i < len(s) :
 
-        if plate_number[i].isalpha() == False:
-            if plate_number[i] == "0":
+        if s[i].isalpha() == False:
+            if s[i] == "0":
                 return False
         i += 1
 
