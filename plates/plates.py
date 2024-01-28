@@ -1,12 +1,11 @@
 def main():
-    while True:
-        plate = input("Plate: ")
-        if is_valid(plate):
-            print("Valid")
-            # return True
-        else:
-            print("Invalid")
-            # return False
+    plate = input("Plate: ")
+    if is_valid(plate):
+        print("Valid")
+        return True
+    else:
+        print("Invalid")
+        return False
 
 
 def is_valid(s):
