@@ -13,7 +13,7 @@ def is_valid(s):
 
 
 def check_length(s):
-    return s >= 2 or s <= 6
+    return len(s) >= 2 or len(s) <= 6
 
 
 
