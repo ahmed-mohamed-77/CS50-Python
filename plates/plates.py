@@ -16,10 +16,8 @@ def check_length(s):
     return len(s) >= 2 or len(s) <= 6
 
 
-
 def check_begin(s):
-    return not any(c.isdigit() for c in s[:2])
-
+    return  all(c.isalpha() for c in s[:2])
 
 def check_spec(s):
     return all(c.isalpha() or c.isdigit() for c in s)
