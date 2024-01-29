@@ -21,3 +21,6 @@ elif len(sys.argv) == 2:
             print("no data inside the table".title())
     except FileNotFoundError:
         sys.exit("File does not exist")
+        
+elif len(sys.argv) > 2:
+    sys.exit("Too many command-line arguments")
