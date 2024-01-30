@@ -12,7 +12,7 @@ def main():
             reader = csv.DictReader(file_reader)
 
             for row in reader:
-                first_name, last_name = row["name"].split(",")
+                last_name, first_name = row["name"].split(",")
                 output.append(
                     {
                         "first": first_name.strip(),
