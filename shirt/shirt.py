@@ -18,19 +18,14 @@ def main():
     # resize the muppet image
     muppet = image1.resize(size)
 
-    # Shift the shirt upward by 20 pixels
-    shift_up = 34
-    paste_position = (0, -shift_up)
-
     # paste the shirt file
-    muppet.paste(shirt_file, paste_position, shirt_file)
+    muppet.paste(shirt_file, (0, 0), shirt_file)
 
     # Convert the image to 'RGB' mode
     muppet = muppet.convert('RGB')
 
     # create output muppet
     muppet.save(sys.argv[2])
-
 
 
 def check_commandline_argument():
