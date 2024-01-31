@@ -16,17 +16,10 @@ def main():
     size = shirt_file.size
 
     # resize the muppet image
-    muppet = image1.resize(size)
-
-    # Shift the shirt upward by 20 pixels
-    shift_up = 34
-    paste_position = (0, -shift_up)
+    muppet = ImageOps.fit(image1, size)
 
     # paste the shirt file
-    muppet.paste(shirt_file, paste_position, shirt_file)
-
-    # Convert the image to 'RGB' mode
-    muppet = muppet.convert("RGB")
+    muppet.paste(shirt_file,  shirt_file)
 
     # create output muppet
     muppet.save(sys.argv[2])
