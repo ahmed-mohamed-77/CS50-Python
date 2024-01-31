@@ -10,7 +10,7 @@ def main():
     except FileNotFoundError:
         sys.exit("Input does not exist")
     # open shirt
-    shirt_file = Image.open("shirt/shirt.py")
+    shirt_file = Image.open("shirt.png")
 
     # get size of the shirt
     size = shirt_file.size
