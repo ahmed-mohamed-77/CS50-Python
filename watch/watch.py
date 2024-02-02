@@ -7,9 +7,13 @@ def main():
 
 
 def parse(s):
-    pattern = r"(?<=src=\")(https://(?:www)?\.?\w+\.\w+(?:\.\w+)?/\w+(?:/[a-zA-Z0-9?=-]+)?)\""
-    checker = re.search(pattern, s)
-    return checker.group(1)
+    pattern_one = r"<iframe.*?src=\"(https?://(?:www)?\.?\w+\.\w+(?:\.\w+)?/\w+(\/[a-zA-Z0-9?=-]+)?)\""
+    if check := re.search(pattern_one, s):
+        search_part = f"https://youtu.be{check.group(2)}"
+        return search_part
 
 if __name__ == "__main__":
     main()
+
+
+
