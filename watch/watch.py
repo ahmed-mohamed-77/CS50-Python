@@ -11,6 +11,7 @@ def parse(s):
     if check := re.search(pattern_one, s):
         search_part = f"https://youtu.be{check.group(2)}"
         return search_part
+    
 
 if __name__ == "__main__":
     main()
