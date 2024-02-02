@@ -35,19 +35,25 @@ def format_time(time_str, add_12_hours=False):
     if ":" in time_str:
         hours, minutes = map(int, time_str.split(":"))
 
-        if minutes >= 60:
-            raise ValueError("check the correct time")
+        if not (0 <= hours <= 23 and 0 <= minutes <= 59):
+            raise ValueError("Invalid time range.")
 
         if add_12_hours and hours < 12:
             hours += 12
+        elif not add_12_hours and hours == 12:
+            hours = 0  # Special case: 12 AM should be converted to 00:00
+
         return f"{hours:02d}:{minutes:02d}"
     else:
         time_str = int(time_str)
+
+        if not (0 <= time_str <= 23):
+            raise ValueError("Invalid time range.")
+
         if add_12_hours and time_str < 12:
             time_str += 12
-            return f"{time_str}:00"
-        else:
-            return f"{str(time_str).zfill(2)}:00"
+        return f"{time_str:02d}:00"
+
 
 
 if __name__ == "__main__":
