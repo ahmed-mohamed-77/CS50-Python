@@ -52,6 +52,8 @@ def format_time(time_str, add_12_hours=False):
 
         if add_12_hours and time_str < 12:
             time_str += 12
+        elif not add_12_hours and time_str == 12:
+            hours
         return f"{time_str:02d}:00"
 
 
