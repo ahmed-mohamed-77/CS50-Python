@@ -1,5 +1,4 @@
 import re
-import sys
 
 
 def main():
@@ -39,12 +38,12 @@ def format_time(time_str, add_12_hours=False):
         if minutes >= 60:
             raise ValueError("check the correct time")
 
-        if add_12_hours == True and hours < 12:
+        if add_12_hours and hours < 12:
             hours += 12
         return f"{hours:02d}:{minutes:02d}"
     else:
         time_str = int(time_str)
-        if add_12_hours == True and time_str < 12:
+        if add_12_hours and time_str < 12:
             time_str += 12
             return f"{time_str}:00"
         else:
