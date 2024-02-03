@@ -1,4 +1,4 @@
-from um.um import count
+from um import count
 import pytest
 
 
