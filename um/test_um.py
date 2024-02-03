@@ -6,9 +6,9 @@ def test_require_spaces_around_um():
     assert count("Um, thanks for the album.") == 1
     assert count("Um, thanks, um...") == 2
     assert count("umm") == 0
-    assert count("hello, um, world") == 1  
+    assert count("hello, um, world") == 1
     assert count("hello,um,world") == 1
-    assert count("hello, um?") == 1  
+    assert count("hello, um?") == 1
     assert count("umm") == 0
 
 
