@@ -12,10 +12,11 @@ def validate(ip):
             if section_one == 0 and section_two == 0 and section_three == 0 and host == 0:
                 return False
             return True
+        else:
+            return False
     else:
         return False
 
 
 if __name__ == "__main__":
     main()
-    
