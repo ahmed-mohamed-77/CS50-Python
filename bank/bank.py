@@ -1,12 +1,15 @@
-# greeting from the teller
-greeting = input("Greeting: ").strip().lower().capitalize()
+def main():
+    print(value(input("Greeting: ").strip().lower()))
 
-# hello pays $0
-if "Hello" in greeting:
-    print("$0")
-# any greeting starting with H pays $20
-elif any(phrases in greeting for phrases in ["How you doing", "Hey", "How's it going"]):
-    print("$20")
-# any other greetings pays $100
-else:
-    print("$100")
+
+def value(greeting):
+    if greeting.startswith("hello"):
+        return "$0"
+    elif greeting.startswith("h"):
+        return "$20"
+    else:
+        return "$100"
+
+
+if __name__ == "__main__":
+    main()
