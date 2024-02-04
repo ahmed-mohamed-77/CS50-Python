@@ -1,12 +1,13 @@
 def main():
-    greeting_customer = value(input("Greeting: ").strip().lower())
+    greeting_customer = value(input("Greeting: ").strip())
     print(f"${greeting_customer}")
 
 
 def value(greeting):
-    if greeting.startswith("hello"):
+    greeting_lower = greeting.lower()
+    if greeting_lower.startswith("hello"):
         return 0
-    elif greeting.startswith("h"):
+    elif greeting_lower.startswith("h"):
         return 20
     else:
         return 100
