@@ -1,4 +1,4 @@
-from numb3ers import validate
+from numb3rs import validate
 
 
 def test_validate():
