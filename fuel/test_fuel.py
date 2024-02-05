@@ -22,6 +22,6 @@ def test_convert():
 
 def test_gauge():
     assert gauge(99) == "F"
-    assert gauge(0) == "E"
+    assert gauge(1) == "E"
     assert gauge(75) == "75%"
 
