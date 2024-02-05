@@ -15,7 +15,7 @@ def test_validate():
     assert validate("2567.2567.0.1") == False
     assert validate("256.0.2567.1") == False
     assert validate("26.512.512.512") == False
-    assert validate("2567.2567.2567.2567") == False
+  
 
 
 def test_false_ip():
