@@ -14,7 +14,7 @@ def test_validate():
     assert validate("256.0.0.1") is False  # Beyond valid range
     assert validate("2567.2567.0.1") is False
     assert validate("256.0.2567.1") is False
-    assert validate("256.0.0.2567") is False
+    assert validate("26.2567.2567.2567") is False
     assert validate("2567.2567.2567.2567") is False
 
 
