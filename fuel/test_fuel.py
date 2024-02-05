@@ -1,4 +1,4 @@
-from 
+from fuel.fuel import convert, gauge
 import pytest
 
 # zero division
