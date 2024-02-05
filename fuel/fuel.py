@@ -8,7 +8,7 @@ def main():
             percentage = convert(user)
 
             # Display the result using the gauge function
-            gauge(percentage)
+            print(gauge(percentage))
 
             # Break out of the loop if no exception occurs
             break
@@ -17,9 +17,13 @@ def main():
             # Handle invalid input, print error message, and continue the loop
             pass
 
+
 def convert(fraction):
     # Convert the user input fraction to integers
     number_one, number_two = map(int, fraction.split("/"))
+
+    if number_two == 0:
+        raise ZeroDivisionError
 
     # Check if the numerator is greater than the denominator
     if number_one > number_two:
@@ -31,13 +35,14 @@ def convert(fraction):
 
 
 def gauge(percentage):
+    per = int(percentage)
     # Display the gauge result based on the calculated percentage
-    if percentage >= 99:
-        print("F")
-    elif percentage <= 1:
-        print("E")
+    if per >= 99:
+        return "F"
+    elif per <= 1:
+        return "E"
     else:
-        print(f"{percentage}%")
+        return f"{per}%"
 
 
 if __name__ == "__main__":
