@@ -13,25 +13,26 @@ def is_valid(s):
 
 
 def check_length(s):
-    return len(s) >= 2 or len(s) <= 6
+    return 2 <= len(s) <= 6
 
 
 def check_begin(s):
     return  all(c.isalpha() for c in s[:2])
+
 
 def check_spec(s):
     return all(c.isalpha() or c.isdigit() for c in s)
 
 
 def check_numbers(s):
-    i = 0
-
-    while i < len(s) :
-
-        if s[i].isalpha() == False:
-            if s[i] == "0":
-                return False
-        i += 1
+    firstnum = next((c for c in s if c.isdigit()), None)
+    if firstnum is None:
+        return True
+    if int(firstnum) == 0:
+        return False
+    index = s.index(firstnum)
+    position = len(s) - index
+    return all(c.isdigit() for c in s[-position:])
 
 
 if __name__ == "__main__":
