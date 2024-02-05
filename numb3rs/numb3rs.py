@@ -28,11 +28,8 @@ def validate(ip):
             and ip_net_host == 0
         ):
             return False
-    else:
-        return False
+    return False
 
 
 if __name__ == "__main__":
     main()
-
-
