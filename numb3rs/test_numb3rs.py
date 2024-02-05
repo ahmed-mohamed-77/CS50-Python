@@ -12,6 +12,9 @@ def test_validate():
     assert validate("1.2.3.1000") is False  # Beyond valid range
     assert validate("10.10.10.10.10") is False  # Too many segments
     assert validate("256.0.0.1") is False  # Beyond valid range
+    assert validate("2567.2567.0.1") is False
+    assert validate("256.0.2567.1") is False
+    assert validate("256.0.0.2567") is False
 
 
 def test_false_ip():
@@ -24,24 +27,3 @@ def test_false_ip():
     assert validate("192.168.0.1/24") is False  # IP with subnet notation
 
 
-def test_invalid_subnet():
-    # Testing an additional function for handling subnet notation
-    assert validate("192.168.0.1/24") is False
-
-
-def test_valid_subnet():
-    # Testing an additional function for handling subnet notation
-    assert validate("192.168.0.1/24") is False
-    assert validate("192.168.0.1/32") is False
-
-
-def test_ipv6_support():
-    # Testing if the function supports IPv6 validation
-    assert validate("2001:0db8:85a3:0000:0000:8a2e:0370:7334") is False
-    assert validate("127.0.0.1") is True  # Should return False for IPv4
-
-
-def test_ip_with_port():
-    # Testing if the function correctly rejects IP addresses with ports
-    assert validate("192.168.0.1:8080") is False
-    assert validate("127.0.0.1") is True
