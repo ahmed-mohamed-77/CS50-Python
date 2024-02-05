@@ -1,4 +1,4 @@
-from fuel.fuel import convert, gauge
+from fuel import convert, gauge
 import pytest
 
 
