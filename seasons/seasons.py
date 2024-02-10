@@ -15,7 +15,7 @@ def main():
         count_leapyear = count_leap_year(user_age.year, today_date.year)
 
         user_age_in_days = (today_date - user_age).days
-        user_age_in_minutes = (user_age_in_days * 60) + (count_leapyear * 60)
+        user_age_in_minutes = (user_age_in_days * 24 * 60)
         convert_number_to_word = p.number_to_words(user_age_in_minutes)
         print(f"{convert_number_to_word} minutes")
     except ValueError:
