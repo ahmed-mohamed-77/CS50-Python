@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 import inflect
 import sys
 
@@ -14,7 +14,7 @@ def main():
     except ValueError:
         sys.exit("Invalid date")
 
-    today_date = datetime.today().date()
+    today_date = date.today()
     count_leapyear = count_leap_year(user_age.year, today_date.year)
 
     user_age_in_days = (today_date - user_age).days
