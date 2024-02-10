@@ -16,5 +16,5 @@ class PDF:
 
 name = input("Name: ")
 pdf = PDF(name)
-pdf.save("Shirtificate.pdf")
+pdf.save("shirtificate.pdf")
 
