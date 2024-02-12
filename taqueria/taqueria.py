@@ -16,6 +16,7 @@ while True:
         item = input("Item: ").title()
         if item in my_dict:
             counter += my_dict[item]
-            print(f"Total: ${counter}")
+            print(f"Total: ${counter:2f}")
     except EOFError:
+        print()
         break
