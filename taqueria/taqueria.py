@@ -13,7 +13,7 @@ my_dict = {
 counter = 0
 while True:
     try:
-        item = input("Item: ")
+        item = input("Item: ").title()
         if item in my_dict:
             counter += my_dict[item]
             print(f"Total: ${counter}")
