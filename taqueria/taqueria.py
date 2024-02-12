@@ -9,11 +9,13 @@ my_dict = {
     "Taco": 3.00,
     "Tortilla Salad": 8.00
 }
+
+counter = 0
 while True:
     try:
         item = input("Item: ")
         if item in my_dict:
-            print(f"Total: ${my_dict[item]}")
+            counter += my_dict[item]
+            print(f"Total: ${counter}")
     except EOFError:
         break
-        
