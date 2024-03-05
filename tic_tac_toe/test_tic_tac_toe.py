@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from project import main
+from tic_tac_toe.project import main
 
 
 def test_check_win():
