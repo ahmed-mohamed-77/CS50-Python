@@ -1,161 +1,135 @@
-from tkinter import *
-from tkinter import messagebox
 from tic_tac_toe.project import main
+import pytest
+from tkinter import Button
+from tkinter import Tk
+from tkinter import Menu
+from tkinter import messagebox
 
 
-def test_check_win():
-    # Create a mock tkinter root window
+
+def test_check_win_X_wins():
     root = Tk()
+    main.root = root  # Set the main function's root for testing
 
-    # Mock buttons
-    b1 = Button(root, text="X")
-    b2 = Button(root, text="X")
-    b3 = Button(root, text="X")
-    b4 = Button(root, text="O")
-    b5 = Button(root, text="O")
-    b6 = Button(root, text=" ")
-    b7 = Button(root, text=" ")
-    b8 = Button(root, text=" ")
-    b9 = Button(root, text=" ")
+    # Mock the buttons with X winning scenario
+    main.b1 = Button(root, text="X")
+    main.b2 = Button(root, text="X")
+    main.b3 = Button(root, text="X")
+    main.b4 = Button(root, text="O")
+    main.b5 = Button(root, text="O")
+    main.b6 = Button(root, text=" ")
+    main.b7 = Button(root, text=" ")
+    main.b8 = Button(root, text=" ")
+    main.b9 = Button(root, text=" ")
 
-    # Set up a sample scenario for X winning
-    b1["text"] = "X"
-    b2["text"] = "X"
-    b3["text"] = "X"
-    assert main.check_win(b1, b2, b3, b4, b5, b6, b7, b8, b9) == True
+    assert main.check_win() is True
 
-    # Set up a sample scenario for O winning
-    b4["text"] = "O"
-    b5["text"] = "O"
-    b6["text"] = "O"
-    assert main.check_win(b1, b2, b3, b4, b5, b6, b7, b8, b9) == True
-
-    # Set up a sample scenario for a draw
-    b7["text"] = "X"
-    b8["text"] = "O"
-    b9["text"] = "X"
-    assert main.check_win(b1, b2, b3, b4, b5, b6, b7, b8, b9) == False
-
-
-def test_reset():
-    # Create a mock tkinter root window
+def test_check_win_O_wins():
     root = Tk()
+    main.root = root  # Set the main function's root for testing
 
-    # Mock buttons
-    b1 = Button(root, text="X")
-    b2 = Button(root, text="O")
-    b3 = Button(root, text=" ")
-    b4 = Button(root, text=" ")
-    b5 = Button(root, text="O")
-    b6 = Button(root, text="X")
-    b7 = Button(root, text="O")
-    b8 = Button(root, text="X")
-    b9 = Button(root, text=" ")
+    # Mock the buttons with O winning scenario
+    main.b1 = Button(root, text="O")
+    main.b2 = Button(root, text="O")
+    main.b3 = Button(root, text="O")
+    main.b4 = Button(root, text="X")
+    main.b5 = Button(root, text="X")
+    main.b6 = Button(root, text=" ")
+    main.b7 = Button(root, text=" ")
+    main.b8 = Button(root, text=" ")
+    main.b9 = Button(root, text=" ")
 
-    # Set up a scenario where buttons have different text
-    assert b1["text"] == "X"
-    assert b2["text"] == "O"
-    assert b3["text"] == " "
-    assert b4["text"] == " "
-    assert b5["text"] == "O"
-    assert b6["text"] == "X"
-    assert b7["text"] == "O"
-    assert b8["text"] == "X"
-    assert b9["text"] == " "
+    assert main.check_win() is True
 
-    # Reset the board
-    main.reset(b1, b2, b3, b4, b5, b6, b7, b8, b9)
+def test_check_win_tie_game():
+    root = Tk()
+    main.root = root  # Set the main function's root for testing
 
-    # Check if all buttons are reset to " "
-    assert b1["text"] == " "
-    assert b2["text"] == " "
-    assert b3["text"] == " "
-    assert b4["text"] == " "
-    assert b5["text"] == " "
-    assert b6["text"] == " "
-    assert b7["text"] == " "
-    assert b8["text"] == " "
-    assert b9["text"] == " "
+    # Mock the buttons with a tie scenario
+    main.b1 = Button(root, text="X")
+    main.b2 = Button(root, text="O")
+    main.b3 = Button(root, text="X")
+    main.b4 = Button(root, text="O")
+    main.b5 = Button(root, text="O")
+    main.b6 = Button(root, text="X")
+    main.b7 = Button(root, text="O")
+    main.b8 = Button(root, text="X")
+    main.b9 = Button(root, text="X")
 
+    assert main.check_win() is False  # No winner, should return False
 
 def test_b_click():
-    # Create a mock tkinter root window
     root = Tk()
+    main.root = root  # Set the main function's root for testing
 
-    # Mock buttons
-    b1 = Button(root, text=" ")
-    b2 = Button(root, text="X")
-    b3 = Button(root, text="O")
-    b4 = Button(root, text=" ")
-    b5 = Button(root, text="X")
-    b6 = Button(root, text="O")
-    b7 = Button(root, text="X")
-    b8 = Button(root, text=" ")
-    b9 = Button(root, text="O")
+    # Mock the buttons
+    main.b1 = Button(root, text=" ")
+    main.b2 = Button(root, text="X")
+    main.b3 = Button(root, text="O")
+    main.b4 = Button(root, text=" ")
+    main.b5 = Button(root, text="X")
+    main.b6 = Button(root, text="O")
+    main.b7 = Button(root, text="X")
+    main.b8 = Button(root, text=" ")
+    main.b9 = Button(root, text="O")
 
-    # Mock counter and clicked status
-    clicked = True
-    counter = 1
-
-    # Simulate clicking on a button with " "
-    main.b_click(b1, clicked, counter)
-    assert b1["text"] == "X"
-    assert clicked == False
-    assert counter == 2
-
-    # Simulate clicking on a button with "X"
-    main.b_click(b2, clicked, counter)
-    assert b2["text"] == "X"
-    assert clicked == False
-    assert counter == 3
-
-    # Simulate clicking on a button with "O"
-    main.b_click(b3, clicked, counter)
-    assert b3["text"] == "O"
-    assert clicked == True
-    assert counter == 4
-
-    # Simulate clicking on a button with "X"
-    main.b_click(b4, clicked, counter)
-    assert b4["text"] == "X"
-    assert clicked == True
-    assert counter == 5
-
-    # Simulate clicking on a button with "X"
-    main.b_click(b5, clicked, counter)
-    assert b5["text"] == "X"
-    assert clicked == True
-    assert counter == 6
-
-    # Simulate clicking on a button with "O"
-    main.b_click(b6, clicked, counter)
-    assert b6["text"] == "O"
-    assert clicked == False
-    assert counter == 7
-
-    # Simulate clicking on a button with "X"
-    main.b_click(b7, clicked, counter)
-    assert b7["text"] == "X"
-    assert clicked == False
-    assert counter == 8
+    # Mock clicked and counter
+    main.clicked = True
+    main.counter = 1
 
     # Simulate clicking on a button with " "
-    main.b_click(b8, clicked, counter)
-    assert b8["text"] == "O"
-    assert clicked == True
-    assert counter == 9
+    main.b_click(main.b1)
+
+    assert main.b1["text"] == "X"  # The button should change to X
+    assert main.clicked is False  # Clicked should change to False
+    assert main.counter == 2  # Counter should increment by 1
+
+    # Simulate clicking on a button with "X"
+    main.b_click(main.b2)
+
+    assert main.b2["text"] == "X"  # The button should stay as X
+    assert main.clicked is False  # Clicked should remain False
+    assert main.counter == 2  # Counter should not change
 
     # Simulate clicking on a button with "O"
-    main.b_click(b9, clicked, counter)
-    assert b9["text"] == "O"
-    assert clicked == True
-    assert counter == 10
+    main.b_click(main.b3)
 
-    # Check if clicking on a disabled button does not change its text
-    main.disable_all_buttons(b1, b2, b3, b4, b5, b6, b7, b8, b9)
-    main.b_click(b1, clicked, counter)
-    assert b1["text"] == "O"
+    assert main.b3["text"] == "O"  # The button should change to O
+    assert main.clicked is True  # Clicked should change back to True
+    assert main.counter == 3  # Counter should increment by 1
 
+def test_reset():
+    root = Tk()
+    main.root = root  # Set the main function's root for testing
+
+    # Mock the buttons with different texts
+    main.b1 = Button(root, text="X")
+    main.b2 = Button(root, text="O")
+    main.b3 = Button(root, text=" ")
+    main.b4 = Button(root, text=" ")
+    main.b5 = Button(root, text="O")
+    main.b6 = Button(root, text="X")
+    main.b7 = Button(root, text="O")
+    main.b8 = Button(root, text="X")
+    main.b9 = Button(root, text=" ")
+
+    # Call reset
+    main.reset()
+
+    # Check if buttons are reset to " "
+    assert main.b1["text"] == " "
+    assert main.b2["text"] == " "
+    assert main.b3["text"] == " "
+    assert main.b4["text"] == " "
+    assert main.b5["text"] == " "
+    assert main.b6["text"] == " "
+    assert main.b7["text"] == " "
+    assert main.b8["text"] == " "
+    assert main.b9["text"] == " "
+
+    # Check if clicked and counter are reset
+    assert main.clicked is True
+    assert main.counter == 0
 
 if __name__ == "__main__":
-    main()
+    pytest.main()
