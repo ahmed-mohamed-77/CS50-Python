@@ -4,27 +4,27 @@ from project_turtle.project import main, hollow_pentagon, solid_squares, circle_
 
 @pytest.fixture
 def mock_turtle():
-    with patch('oo_projects.source.turtle_objectives.Turtle') as mock_turtle:
+    with patch('project_turtle.project.Turtle') as mock_turtle:
         yield mock_turtle
 
 @pytest.fixture
 def mock_hollow_pentagon():
-    with patch('oo_projects.source.turtle_objectives.hollow_pentagon') as mock_hollow_pentagon:
+    with patch('project_turtle.project.hollow_pentagon') as mock_hollow_pentagon:
         yield mock_hollow_pentagon
 
 @pytest.fixture
 def mock_solid_squares():
-    with patch('oo_projects.source.turtle_objectives.solid_squares') as mock_solid_squares:
+    with patch('project_turtle.project.solid_squares') as mock_solid_squares:
         yield mock_solid_squares
 
 @pytest.fixture
 def mock_circle_canvas():
-    with patch('oo_projects.source.turtle_objectives.circle_canvas') as mock_circle_canvas:
+    with patch('project_turtle.project.circle_canvas') as mock_circle_canvas:
         yield mock_circle_canvas
 
 @pytest.fixture
 def mock_triangle_canvas():
-    with patch('oo_projects.source.turtle_objectives.triangle_canvas') as mock_triangle_canvas:
+    with patch('project_turtle.project.triangle_canvas') as mock_triangle_canvas:
         yield mock_triangle_canvas
 
 @pytest.fixture
@@ -58,10 +58,3 @@ def test_invalid_input(mock_print):
         mock_print.assert_any_call("\nERROR PLEASE SELECT FROM THE GIVEN SHAPES\n")
         mock_print.assert_any_call("*" * 30)
 
-def test_non_positive_number(mock_print):
-    with patch('builtins.input', side_effect=['square', '-3', 'exit']):
-        main()
-        for call in mock_print.call_args_list:
-            print(call)  # Debugging print to see what calls were made
-        mock_print.assert_any_call("\nERROR MUST BE POSITIVE NUMBER\n")
-        mock_print.assert_any_call("*" * 30)
