@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, call
 from turtle import Turtle
-from oo_projects.source.turtle_objectives import main, hollow_pentagon, solid_squares, circle_canvas, triangle_canvas
+from turtle.project import main, hollow_pentagon, solid_squares, circle_canvas, triangle_canvas
 
 @pytest.fixture
 def mock_turtle():
