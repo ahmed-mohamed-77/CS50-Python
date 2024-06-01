@@ -1,6 +1,5 @@
 import pytest
 from unittest.mock import patch, call
-from turtle import Turtle
 from project_turtle.project import main, hollow_pentagon, solid_squares, circle_canvas, triangle_canvas
 
 @pytest.fixture
@@ -33,22 +32,22 @@ def mock_print():
     with patch('builtins.print') as mock_print:
         yield mock_print
 
-def test_draw_pentagon(mock_turtle, mock_hollow_pentagon):
+def test_draw_pentagon(mock_hollow_pentagon):
     with patch('builtins.input', side_effect=['pentagon', 'exit']):
         main()
         mock_hollow_pentagon.assert_called_once()
 
-def test_draw_squares(mock_turtle, mock_solid_squares):
+def test_draw_squares(mock_solid_squares):
     with patch('builtins.input', side_effect=['square', '3', 'exit']):
         main()
         mock_solid_squares.assert_called_once()
 
-def test_draw_circles(mock_turtle, mock_circle_canvas):
+def test_draw_circles(mock_circle_canvas):
     with patch('builtins.input', side_effect=['circle', '4', 'exit']):
         main()
         mock_circle_canvas.assert_called_once()
 
-def test_draw_triangles(mock_turtle, mock_triangle_canvas):
+def test_draw_triangles(mock_triangle_canvas):
     with patch('builtins.input', side_effect=['triangle', '5', 'exit']):
         main()
         mock_triangle_canvas.assert_called_once()
