@@ -1,7 +1,7 @@
 import pytest
 import json
 from typing import List, Dict
-from oo_projects.source.online_shopping_system import Customer  # Adjust the import based on your file structure
+from online_shopping_system.project import Customer  # Adjust the import based on your file structure
 
 
 @pytest.fixture
