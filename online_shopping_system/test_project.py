@@ -11,7 +11,7 @@ def customer():
 
 @pytest.fixture
 def customer_two():
-    return Customer("asmaa", "asmaa@gmail.com")
+    return Customer("mohamed", "mohamed@gmail.com")
 
 
 @pytest.fixture
