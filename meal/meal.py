@@ -20,9 +20,9 @@ def main():
         """
         if 7.0 <= time <= 8.0:
             print("breakfast time")
-        elif 12.0 <= time < 13.0:
+        elif 12.0 <= time <= 13.0:
             print("lunch time")
-        elif 18.0 <= time < 19.5:
+        elif 18.0 <= time <= 19.0:
             print("dinner time")
     except ValueError:
         print("Invalid time  Format".upper())
