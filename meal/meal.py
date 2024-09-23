@@ -11,6 +11,7 @@ def main():
 
 def convert(time_str):
     hours, minutes = map(int, time_str.split(":"))
+    print(hours + minutes / 60.0)
     return hours + minutes / 60.0
 
 if __name__ == "__main__":
